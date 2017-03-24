@@ -1,14 +1,14 @@
 # User Stories
 
-* As a user I would like to see a page with the GASC logo and basic information about the Club
-  * Create rails project that will display the logo and the information 2
+* As a guest I would like to see a page with the GASC logo and basic information about the Club
+  * Create rails responsive project that will display the logo and the information **2**
   * Tie the domain to a heroku server **3**
   * _have to include logo and link for USA Swim_ **1**
 
-* As a user I would like to see information on the coaches
+* As a guest I would like to see information on the coaches
   * create a tab with coaches information **1**
 
-* As a user I would like to see a Google calendar of events/meets
+* As a guest I would like to see a Google calendar of events/meets
   * integrate the Google calendar API under the GASC account **3**
 
 * As a user I would like to be able to log into the private section using my Google account or email
