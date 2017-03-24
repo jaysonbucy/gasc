@@ -9,6 +9,19 @@
   </head>
 
   <body>
+    <nav class='header-nav'>
+      <i>
+        <%= link_to(image_tag('shield_usa_swim.png', size: 80), 'http://www.usaswimming.org/DesktopDefault.aspx', target: '_blank') %>
+      </i>
+      <i>
+        <%= image_tag('gasc_header_2015.png', size: '280x180', alt: 'GASC') %>
+      </i>
+      <i>
+        Sign In
+      </i>
+      <br>
+      <h1>Greater Ada Swim Club</h1>
+    </nav>
     <%= yield %>
   </body>
 </html>
