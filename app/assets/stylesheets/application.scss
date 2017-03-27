@@ -1,15 +1,5 @@
-@import "welcome";
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
-/*
-colors for site
-dark blue = #000566
-medium blue = #5FBDF5
-light blue = #C4EAFF
-green = #39B348
-white = #FFF
-*/
 
 body{
   color: #000566;
@@ -22,31 +12,17 @@ h1{
   text-shadow: 1px 1px 0px #FFF;
 }
 hr.shadow{
-	height: 10px;
-	border: 0;
-	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+  height: 10px;
+  border: 0;
+  box-shadow: 0 10px 10px -10px #8c8b8b inset;
 }
 
-
-.header{
-  width: 100%;
+.logo{
   text-align: center;
+}
 
-  .header-swim{
-    width: 20%;
-    float: left;
-  }
-
-  .header-gasc{
-    width: 60%;
-    display: inline;
-    justify-content: center;
-  }
-
-  .header-login{
-    width: 20%;
-    float: right;
-  }
+.sign-in{
+  text-align: center;
 }
 
 .header-control-bar{
@@ -62,5 +38,9 @@ hr.shadow{
       color: #FFF;
       text-decoration: none;
     }
+  }
+
+  .btn:hover{
+    background-color: #2CA8DD;
   }
 }

@@ -9,18 +9,24 @@
   </head>
 
   <body>
-    <div class='header container-fluid'>
-      <div class='header-swim'>
-        <%= link_to(image_tag('shield_usa_swim.png', size: 80), 'http://www.usaswimming.org/DesktopDefault.aspx', target: '_blank') %>
-      </div>
-      <div class='header-gasc'>
-        <%= image_tag('gasc_header_2015.png', width: 200, alt: 'GASC') %>
-      </div>
-      <div class='header-login'>
-        Sign In will go here eventually
+    <div class='container-fluid'>
+      <div class='row'>
+        <div class="col-md-3 col-sm-3 logo">
+          <%= link_to(image_tag('shield_usa_swim.png', size: 80), 'http://www.usaswimming.org/DesktopDefault.aspx', target: '_blank') %>
+        </div>
+        <div class="col-md-6 col-sm-5 logo">
+          <%= image_tag('gasc_header_2015.png', width: 200, alt: 'GASC') %>
+        </div>
+        <div class="col-md-3 col-sm-4 sign-in">
+          Sign In
+        </div>
       </div>
     </div>
-    <h1>Greater Ada Swim Club</h1>
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Greater Ada Swim Club</h1>
+      </div>
+    </div>
     <%= render "control_bar" %>
     <hr class="shadow">
     <%= yield %>
