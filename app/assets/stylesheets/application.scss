@@ -1,4 +1,6 @@
 @import "welcome";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 /*
 colors for site
@@ -52,27 +54,13 @@ hr.shadow{
   background-color: inherit;
   text-align: left;
 
-  button{
-  	display: inline;
-  	font-weight: bold;
-  	padding: 10px 15px;
-  	background-color: #39B348;
-  	border: 1 white;
-  	border-radius: 5px;
-    border-bottom: 5px solid #669644;
+  .btn{
+    background-color: #39B348;
 
     a,
     a.visited{
       color: #FFF;
-      text-transform: uppercase;
       text-decoration: none;
-	    text-shadow: 0px -2px #669644;
     }
-  }
-
-  button:active{
-  	transform: translate(0px,5px);
-    -webkit-transform: translate(0px,5px);
-  	border-bottom: 1px solid;
   }
 }
