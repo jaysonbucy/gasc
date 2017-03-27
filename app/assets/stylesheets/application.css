@@ -3,13 +3,27 @@ body{
   background-color: #C4EAFF;
 }
 
+.header-swim{
+  width: 25%;
+  align-items: flex-start;;
+}
+
+.header-gasc{
+  width: 45%;
+  align-items: center;
+}
+
+.header-login{
+  width: 30%;
+  align-items: flex-end;
+}
+
 .header-nav{
   position: absolute;
   top: 20%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   transform: translateY(-50%);
-  width: 100%;
   text-align: center;
   text-transform: uppercase;
   text-shadow: 1px 1px 0px rgb(58,23,63);
