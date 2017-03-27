@@ -1,0 +1,14 @@
+<div class="header-control-bar">
+  <% if current_page?(root_url) %>
+    <button>
+      <%= link_to "about", welcome_about_path %>
+    </button>
+    <button>
+      <%= link_to "coaches", welcome_coaches_path%>
+    </button>
+  <% else %>
+    <button>
+      <%= link_to "home", root_url %>
+    </button>
+  <% end %>
+</div>
