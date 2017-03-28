@@ -1,14 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Gasc</title>
+    <title>Greater Ada Swim Club</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class='container-fluid'>
+      <div class='row'>
+        <div class="col-md-3 col-sm-3 logo">
+          <%= link_to(image_tag('shield_usa_swim.png', size: 80), 'http://www.usaswimming.org/DesktopDefault.aspx', target: '_blank') %>
+        </div>
+        <div class="col-md-6 col-sm-5 logo">
+          <%= image_tag('gasc_header_2015.png', width: 200, alt: 'GASC') %>
+        </div>
+        <div class="col-md-3 col-sm-4 sign-in">
+          Sign In
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Greater Ada Swim Club</h1>
+      </div>
+    </div>
+    <%= render "control_bar" %>
+    <hr class="shadow">
     <%= yield %>
   </body>
 </html>

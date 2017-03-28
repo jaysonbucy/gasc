@@ -1,0 +1,46 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body{
+  color: #000566;
+  background-color: #C4EAFF;
+}
+
+h1{
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0px #FFF;
+}
+hr.shadow{
+  height: 10px;
+  border: 0;
+  box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+.logo{
+  text-align: center;
+}
+
+.sign-in{
+  text-align: center;
+}
+
+.header-control-bar{
+  color: #FFF;
+  background-color: inherit;
+  text-align: left;
+
+  .btn{
+    background-color: #39B348;
+
+    a,
+    a.visited{
+      color: #FFF;
+      text-decoration: none;
+    }
+  }
+
+  .btn:hover{
+    background-color: #2CA8DD;
+  }
+}
