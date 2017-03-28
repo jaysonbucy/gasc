@@ -18,14 +18,13 @@ end
 group :development do
   gem 'sqlite3'
   gem 'listen'
-  gem 'pry-rails'
 end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'rails-controller-testing'
   gem 'shoulda'
-  gem 'pry'
+  gem 'pry-rails'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'faker'
 end
