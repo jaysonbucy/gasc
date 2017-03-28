@@ -1,12 +1,17 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="container col-xs-4 col-sm-3 col-md-2">
-      calendar goes here
-      <br>
-      other calendar goes here
+    <div class="clearfix visible-md-block visible-lg-block">
+      <div class="container col-md-3 col-lg-2">
+        <%= render "calendar" %>
+      </div>
+      <div class="container col-md-9 col-lg-8">
+        <%= render "content" %>
+      </div>
     </div>
-    <div class="container col-xs-8 col-sm-9 col-md-10">
-      Welcome to the Greater Ada Swim Club website!
+    <div class="clearfix visible-xs-block visible-sm-block">
+      <div class="container col-xs-12 col-sm-12">
+        <%= render "content" %>
+      </div>
     </div>
   </div>
 </div>
