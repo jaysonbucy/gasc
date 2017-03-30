@@ -1,20 +1,32 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$light-blue: #C4EAFF;
+$medium-blue: #2CA8DD;
+$dark-blue: #000566;
+$white: #FFFFFF;
+$dark-green: #8c8b8b;
+$light-green: #39B348;
+
 body{
-  color: #000566;
-  background-color: #C4EAFF;
+  color: $dark-blue;
+  background-color: $light-blue;
 }
 
 h1{
   text-align: center;
   text-transform: uppercase;
-  text-shadow: 1px 1px 0px #FFF;
+  text-shadow: 1px 1px 0px $white;
 }
+
 hr.shadow{
   height: 10px;
   border: 0;
-  box-shadow: 0 10px 10px -10px #8c8b8b inset;
+  box-shadow: 0 10px 10px -10px $dark-green inset;
+}
+
+.view-container{
+  padding-left: 2em;
 }
 
 .logo{
@@ -22,25 +34,32 @@ hr.shadow{
 }
 
 .sign-in{
+  padding-top: 2em;
   text-align: center;
 }
 
 .header-control-bar{
-  color: #FFF;
+  color: $white;
   background-color: inherit;
   text-align: left;
+}
 
-  .btn{
-    background-color: #39B348;
+.btn{
+  background-color: $light-green;
 
-    a,
-    a.visited{
-      color: #FFF;
-      text-decoration: none;
-    }
+  a,
+  a.visited{
+    color: $white;
+    background-color: $light-green;
+    text-decoration: none;
   }
 
-  .btn:hover{
-    background-color: #2CA8DD;
+  input{
+    background-color: inherit;
+    border: 0;
   }
+}
+
+.btn:hover{
+  background-color: $medium-blue;
 }

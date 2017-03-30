@@ -8,6 +8,8 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'bootstrap-sass'
 gem 'google-api-client', '>= 0.8'
+gem 'figaro'
+gem 'devise'
 
 
 group :production do
