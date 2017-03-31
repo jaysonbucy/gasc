@@ -7,6 +7,7 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'devise'
 require 'factory_girl_rails'
+require 'capybara'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -60,4 +61,18 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::Test::ControllerHelpers, type: :view
+  config.include IntegrationSpecHelper, :type => :feature
+end
+
+Capybara.default_host = 'http://localhost:3000'
+
+def stub_omniauth
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.add_mock(:google_oauth2, {
+    :first_name => 'Testy',
+    :last_name => 'McTesterson',
+    :email => 'test@test.test',
+    :password => 'testing01',
+    :image => 'https://blog.xenproject.org/wp-content/uploads/2014/10/Testing.jpg'
+  })
 end

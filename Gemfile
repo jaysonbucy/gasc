@@ -27,6 +27,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'faker'
+  gem 'capybara'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
