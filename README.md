@@ -3,4 +3,4 @@
 ## Greater Ada Area Swim Club
 This is the codebase for the GASC team website.
 
-To get the Google Calendar API set up you will need to follow [Google's directions]( https://developers.google.com/google-apps/calendar/quickstart/ruby). 
+To get the client id and secret for the `google_oauth2` you will need to log in to the GASC Google account and go to the developer console. Under the Credentials tab it's "Web Login" key. Click on that and copy the ID and Secret into your `application.yml` file.
