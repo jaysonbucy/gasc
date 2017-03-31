@@ -41,11 +41,13 @@ hr.shadow{
 .header-control-bar{
   color: $white;
   background-color: inherit;
+  padding-left: 2em;
   text-align: left;
 }
 
 .btn{
   background-color: $light-green;
+  text-transform: capitalize;
 
   a,
   a.visited{
