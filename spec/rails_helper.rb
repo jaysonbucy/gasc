@@ -87,6 +87,7 @@ def stub_email
     firstname: "Tester",
     lastname: "Account",
     email: "tester.account@testing.test",
-    password: "password01"
+    password: "password01",
+    image: 'https://blog.xenproject.org/wp-content/uploads/2014/10/Testing.jpg'
   )
 end

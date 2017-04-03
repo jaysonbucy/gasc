@@ -9,13 +9,6 @@ require 'faker'
   )
 end
 
-test_account = User.create!(
-  firstname: "Tester",
-  lastname: "Account",
-  email: "tester.account@testing.test",
-  password: "password01"
-)
-
 admin = User.create!(
   firstname: "Jayson",
   lastname: "Bucy",
