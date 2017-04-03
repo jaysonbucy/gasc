@@ -9,6 +9,8 @@ require 'devise'
 require 'factory_girl_rails'
 require 'capybara'
 
+require_relative './support/integration_spec_helper.rb'
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -69,10 +71,22 @@ Capybara.default_host = 'http://localhost:3000'
 def stub_omniauth
   OmniAuth.config.test_mode = true
   OmniAuth.config.add_mock(:google_oauth2, {
-    :first_name => 'Testy',
-    :last_name => 'McTesterson',
-    :email => 'test@test.test',
-    :password => 'testing01',
-    :image => 'https://blog.xenproject.org/wp-content/uploads/2014/10/Testing.jpg'
+    info: {
+      :name => 'Testy McTesterson',
+      :first_name => 'Testy',
+      :last_name => 'McTesterson',
+      :email => 'test@test.test',
+      :password => 'testing01',
+      :image => 'https://blog.xenproject.org/wp-content/uploads/2014/10/Testing.jpg'
+    }
   })
+end
+
+def stub_email
+  User.create!(
+    firstname: "Tester",
+    lastname: "Account",
+    email: "tester.account@testing.test",
+    password: "password01"
+  )
 end
