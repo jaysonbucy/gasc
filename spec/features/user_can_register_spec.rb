@@ -22,7 +22,7 @@ RSpec.describe 'user registers'do
     click_button 'Sign up'
     expect(page).to have_content('Welcome to the GASC')
   end
-  
+
   scenario 'using an existing email' do
     stub_email
     visit new_user_registration_path
@@ -33,6 +33,18 @@ RSpec.describe 'user registers'do
     fill_in 'user_password_confirmation', with: 'testing01'
     click_button 'Sign up'
     expect(page).to have_content('Email has already been taken')
+  end
+
+  scenario 'using no email' do
+    visit new_user_registration_path
+    fill_in 'user_firstname', with: 'Tester'
+    fill_in 'user_lastname', with: 'Account'
+    fill_in 'user_email', with: ''
+    fill_in 'user_password', with: 'testing01'
+    fill_in 'user_password_confirmation', with: 'testing01'
+    click_button 'Sign up'
+    expect(page).to have_content('Email can\'t be blank')
+    expect(page).to have_content('Email is too short (minimum is 3 characters)')
   end
 
   scenario 'using no name' do
@@ -68,5 +80,4 @@ RSpec.describe 'user registers'do
     click_button 'Sign up'
     expect(page).to have_content('Password is too short (minimum is 6 characters)')
   end
-
 end

@@ -8,8 +8,11 @@ RSpec.feature "user logs in" do
     click_link "Sign In"
     expect(page).to have_link(href: user_google_oauth2_omniauth_authorize_path)
     click_link href: user_google_oauth2_omniauth_authorize_path
-    expect(page).to have_content("Welcome to the GASC")
     expect(page).to have_link("Sign Out")
+    expect(page).to have_button("forms")
+    expect(page).to have_button("forum")
+    expect(page).to have_button("terminology")
+    expect(page).to have_button("payment")
   end
 
   scenario "using email" do
@@ -20,7 +23,10 @@ RSpec.feature "user logs in" do
     fill_in 'Email', with: 'tester.account@testing.test'
     fill_in 'Password', with: 'password01'
     click_button "Log in"
-    expect(page).to have_content("Welcome to the GASC")
     expect(page).to have_link("Sign Out")
+    expect(page).to have_button("forms")
+    expect(page).to have_button("forum")
+    expect(page).to have_button("terminology")
+    expect(page).to have_button("payment")
   end
 end

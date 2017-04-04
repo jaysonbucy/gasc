@@ -1,23 +1,23 @@
 <div class="header-control-bar">
   <% if current_page?(root_url) %>
-    <button type="button" class="btn btn-primary">
+    <button type="button" class="btn btn-primary about">
       <%= link_to "about", welcome_about_path %>
     </button>
-    <button type="button" class="btn btn-primary">
+    <button type="button" class="btn btn-primary coaches">
       <%= link_to "coaches", welcome_coaches_path%>
     </button>
   <% elsif current_page?(welcome_about_path) %>
-    <button type="button" class="btn btn-primary">
+    <button type="button" class="btn btn-primary home">
       <%= link_to "home", root_url %>
     </button>
-    <button type="button" class="btn btn-primary">
+    <button type="button" class="btn btn-primary coaches">
       <%= link_to "coaches", welcome_coaches_path%>
     </button>
   <% elsif current_page?(welcome_coaches_path) %>
-    <button type="button" class="btn btn-primary">
+    <button type="button" class="btn btn-primary about">
       <%= link_to "about", welcome_about_path %>
     </button>
-    <button type="button" class="btn btn-primary">
+    <button type="button" class="btn btn-primary home">
       <%= link_to "home", root_url %>
     </button>
   <% end %>
