@@ -18,7 +18,18 @@
           <%= image_tag('gasc_header_2015.png', width: 200, alt: 'GASC') %>
         </div>
         <div class="col-md-3 col-sm-4 sign-in">
-          Sign In
+          <% if user_signed_in? %>
+            <% if current_user.image? %>
+              <%= image_tag(current_user.image, size: 80) %>
+            <% else %>
+              <%= image_tag('gasc_bw_2015.jpg', size: 80) %>
+            <% end %>
+            <strong><%= link_to "#{current_user.firstname} #{current_user.lastname}", edit_user_registration_path %></strong> | 
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "Sign Up", new_user_registration_path %> |
+            <%= link_to "Sign In", new_user_session_path %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -27,7 +38,11 @@
         <h1>Greater Ada Swim Club</h1>
       </div>
     </div>
-    <%= render "control_bar" %>
+    <% if user_signed_in? %>
+      <%= render "users/control_bar" %>
+    <% else %>
+      <%= render "welcome/control_bar" %>
+    <% end %>
     <hr class="shadow">
     <%= yield %>
   </body>

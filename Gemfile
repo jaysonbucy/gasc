@@ -8,6 +8,9 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'bootstrap-sass'
 gem 'google-api-client', '>= 0.8'
+gem 'figaro'
+gem 'devise'
+gem "omniauth-google-oauth2"
 
 
 group :production do
@@ -24,6 +27,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'faker'
+  gem 'capybara'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
