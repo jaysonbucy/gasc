@@ -15,8 +15,8 @@ module MockedSpecHelper
 
   def stub_email
     User.create!(
-      firstname: "Tester",
-      lastname: "Account",
+      first_name: "Tester",
+      last_name: "Account",
       email: "tester.account@testing.test",
       password: "password01",
       image: 'https://blog.xenproject.org/wp-content/uploads/2014/10/Testing.jpg'

@@ -10,7 +10,8 @@ gem 'bootstrap-sass'
 gem 'google-api-client', '>= 0.8'
 gem 'figaro'
 gem 'devise'
-gem "omniauth-google-oauth2"
+gem 'omniauth-google-oauth2'
+gem 'rails_admin', '~> 1.1.1'
 
 
 group :production do

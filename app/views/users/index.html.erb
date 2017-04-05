@@ -1,5 +1,13 @@
-<div class="container-fluid">
-  <div class="container col-xs-12 col-sm-12">
-    <%= render "content" %>
+<% if current_user.admin? %>
+  <div class="container-fluid">
+    <div class="container col-xs-12 col-sm-12">
+      <%= render "admin_content" %>
+    </div>
   </div>
-</div>
+<% elsif current_user.standard? %>
+  <div class="container-fluid">
+    <div class="container col-xs-12 col-sm-12">
+      <%= render "standard_content" %>
+    </div>
+  </div>
+<% end %>

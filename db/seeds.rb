@@ -2,18 +2,19 @@ require 'faker'
 
 5.times do
   User.create!(
-    firstname: Faker::Name.first_name,
-    lastname: Faker::Name.last_name,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
     email: Faker::Internet.safe_email,
     password: Faker::Internet.password(6, 8)
   )
 end
 
 admin = User.create!(
-  firstname: "Jayson",
-  lastname: "Bucy",
+  first_name: "Jayson",
+  last_name: "Bucy",
   email: "jayson@bucy.me",
-  password: "testing01"
+  password: "testing01",
+  role: "admin"
 )
 
 puts "Seed finshed"

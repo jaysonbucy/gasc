@@ -8,13 +8,15 @@ class User < ApplicationRecord
          uniqueness: { case_sensitive: false },
          length: { minimum: 3, maximum: 254 }
 
-  validates :firstname, presence: true
-  validates :lastname, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+
+  enum role: [:standard, :admin]
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.firstname = auth.info.first_name
-      user.lastname = auth.info.last_name
+      user.first_name = auth.info.first_name
+      user.last_name = auth.info.last_name
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
       user.image = auth.info.image
