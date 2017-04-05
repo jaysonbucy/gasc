@@ -15,6 +15,15 @@ RSpec.feature "user logs in" do
     expect(page).to have_button("payment")
   end
 
+  scenario "using bad google oauth2 info" do
+    visit new_user_session_path
+    expect(page).to have_link("Sign In")
+    click_link "Sign In"
+    expect(page).to have_link(href: user_google_oauth2_omniauth_authorize_path)
+    click_link href: user_google_oauth2_omniauth_authorize_path
+    expect(page).to have_current_path(root_path)
+  end
+
   scenario "using email" do
     visit new_user_session_path
     stub_email
