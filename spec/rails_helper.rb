@@ -10,6 +10,7 @@ require 'factory_girl_rails'
 require 'capybara'
 
 require_relative './support/integration_spec_helper.rb'
+require_relative './support/mocked_spec_helper.rb'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -64,30 +65,7 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::Test::ControllerHelpers, type: :view
   config.include IntegrationSpecHelper, :type => :feature
+  config.include MockedSpecHelper, :type => :feature
 end
 
 Capybara.default_host = 'http://localhost:3000'
-
-def stub_omniauth
-  OmniAuth.config.test_mode = true
-  OmniAuth.config.add_mock(:google_oauth2, {
-    info: {
-      :name => 'Testy McTesterson',
-      :first_name => 'Testy',
-      :last_name => 'McTesterson',
-      :email => 'test@test.test',
-      :password => 'testing01',
-      :image => 'https://blog.xenproject.org/wp-content/uploads/2014/10/Testing.jpg'
-    }
-  })
-end
-
-def stub_email
-  User.create!(
-    firstname: "Tester",
-    lastname: "Account",
-    email: "tester.account@testing.test",
-    password: "password01",
-    image: 'https://blog.xenproject.org/wp-content/uploads/2014/10/Testing.jpg'
-  )
-end
