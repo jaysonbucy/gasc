@@ -33,6 +33,14 @@ RailsAdmin.config do |config|
       field :image
     end
   end
+  config.model 'Form' do
+    list do
+      field :description
+      field :url
+      field :active
+      field :created_by
+    end
+  end
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory

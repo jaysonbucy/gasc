@@ -9,13 +9,33 @@ require 'faker'
   )
 end
 
-admin = User.create!(
-  first_name: "Jayson",
-  last_name: "Bucy",
-  email: "jayson@bucy.me",
+3.times do
+  Form.create!(
+    description: Faker::Superhero.name,
+    url: Faker::Internet.url,
+    active: true,
+    created_by: Faker::Name.name
+  )
+end
+
+standard = User.create!(
+  first_name: "Standard",
+  last_name: "Userman",
+  email: "standard@user.com",
   password: "testing01",
-  role: "admin"
+  role: "standard",
+  image: "https://www.marathonsoftware.com.au/images/intro/basic.png"
+)
+
+admin = User.create!(
+  first_name: "Admin",
+  last_name: "Userman",
+  email: "admin@user.com",
+  password: "testing01",
+  role: "admin",
+  image: "https://www.gatorclean.net/images/gatormascot.png"
 )
 
 puts "Seed finshed"
 puts "#{User.count} users created"
+puts "#{Form.count} forms created"

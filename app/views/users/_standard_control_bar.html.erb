@@ -1,17 +1,19 @@
 
 <div class="header-control-bar">
-  <% if current_page?(root_url) %>
-    <button type="button" class="btn btn-primary forms">
-      <%= link_to "forms" %>
-    </button>
-    <button type="button" class="btn btn-primary forum">
-      <%= link_to "forum" %>
-    </button>
-    <button type="button" class="btn btn-primary terminology">
-      <%= link_to "terminology" %>
-    </button>
-    <button type="button" class="btn btn-primary payment">
-      <%= link_to "payment" %>
-    </button>
-  <% end %>
+  <button type="button" class="btn btn-primary forms">
+    <% if current_page?(forms_path) %>
+      <%= link_to "back", root_path %>
+    <% else %>
+      <%= link_to "forms", forms_path %>
+    <% end %>
+  </button>
+  <button type="button" class="btn btn-primary forum">
+    <%= link_to "forum" %>
+  </button>
+  <button type="button" class="btn btn-primary terminology">
+    <%= link_to "terminology" %>
+  </button>
+  <button type="button" class="btn btn-primary payment">
+    <%= link_to "payment" %>
+  </button>
 </div>
