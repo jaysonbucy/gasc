@@ -24,7 +24,7 @@
             <% else %>
               <%= image_tag('gasc_bw_2015.jpg', size: 80) %>
             <% end %>
-            <strong><%= link_to "#{current_user.firstname} #{current_user.lastname}", edit_user_registration_path %></strong> | 
+            <strong><%= link_to "#{current_user.first_name} #{current_user.last_name}", edit_user_registration_path %></strong> |
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
           <% else %>
             <%= link_to "Sign Up", new_user_registration_path %> |
@@ -39,7 +39,11 @@
       </div>
     </div>
     <% if user_signed_in? %>
-      <%= render "users/control_bar" %>
+      <% if current_user.admin? %>
+        <%= render "users/admin_control_bar" %>
+      <% else %>
+        <%= render "users/standard_control_bar" %>
+      <% end %>
     <% else %>
       <%= render "welcome/control_bar" %>
     <% end %>

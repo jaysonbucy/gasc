@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   let(:subject) { create(:user) }
 
-  it { is_expected.to validate_presence_of(:firstname) }
-  it { is_expected.to validate_presence_of(:lastname) }
+  it { is_expected.to validate_presence_of(:first_name) }
+  it { is_expected.to validate_presence_of(:last_name) }
 
   it { is_expected.to validate_presence_of(:email) }
   it { is_expected.to validate_uniqueness_of(:email) }
@@ -14,11 +14,11 @@ RSpec.describe User, type: :model do
   it { is_expected.to validate_presence_of(:password) }
 
   describe "attributes" do
-    it "should have firstname attribute" do
-      expect(subject).to have_attributes(firstname: subject.firstname)
+    it "should have first_name attribute" do
+      expect(subject).to have_attributes(first_name: subject.first_name)
     end
-    it "should have lastname attribute" do
-      expect(subject).to have_attributes(lastname: subject.lastname)
+    it "should have last_name attribute" do
+      expect(subject).to have_attributes(last_name: subject.last_name)
     end
     it "should have email attribute" do
       expect(subject).to have_attributes(email: subject.email)
@@ -42,8 +42,8 @@ RSpec.describe User, type: :model do
       user = User.from_omniauth(auth)
       expect(user.provider).to eq(auth.provider)
       expect(user.uid).to eq(auth.uid)
-      expect(user.firstname).to eq(auth.info.first_name)
-      expect(user.lastname).to eq(auth.info.last_name)
+      expect(user.first_name).to eq(auth.info.first_name)
+      expect(user.last_name).to eq(auth.info.last_name)
       expect(user.email).to eq(auth.info.email)
       expect(user.image).to eq(auth.info.image)
     end
