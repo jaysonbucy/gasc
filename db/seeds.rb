@@ -9,13 +9,35 @@ require 'faker'
   )
 end
 
-admin = User.create!(
-  first_name: "Jayson",
-  last_name: "Bucy",
-  email: "jayson@bucy.me",
+users = User.all
+
+3.times do
+  SwimForm.create!(
+    description: Faker::Superhero.name,
+    url: Faker::Internet.url,
+    active: true,
+    user: users.sample
+  )
+end
+
+standard = User.create!(
+  first_name: "Standard",
+  last_name: "Userman",
+  email: "standard@user.com",
   password: "testing01",
-  role: "admin"
+  role: "standard",
+  image: "https://www.marathonsoftware.com.au/images/intro/basic.png"
+)
+
+admin = User.create!(
+  first_name: "Admin",
+  last_name: "Userman",
+  email: "admin@user.com",
+  password: "testing01",
+  role: "admin",
+  image: "https://www.gatorclean.net/images/gatormascot.png"
 )
 
 puts "Seed finshed"
 puts "#{User.count} users created"
+puts "#{SwimForm.count} swim forms created"

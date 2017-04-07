@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   end
   root 'welcome#index'
 
+  resources :swim_forms, only: [:index]
+
   get 'welcome/about'
   get 'welcome/coaches'
 end

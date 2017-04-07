@@ -1,13 +1,36 @@
-<% if current_user.admin? %>
-  <div class="container-fluid">
-    <div class="container col-xs-12 col-sm-12">
-      <%= render "admin_content" %>
-    </div>
+<div class="clearfix visible-md-block visible-lg-block">
+  <div class="container col-md-3 col-lg-3 calendar">
+    <%= render "welcome/calendar" %>
   </div>
-<% elsif current_user.standard? %>
-  <div class="container-fluid">
-    <div class="container col-xs-12 col-sm-12">
-      <%= render "standard_content" %>
-    </div>
+  <div class="container col-md-9 col-lg-9">
+    <% if current_user.admin? %>
+      <div class="container-fluid">
+        <div class="container col-xs-12 col-sm-12">
+          <%= render "admin_content" %>
+        </div>
+      </div>
+    <% elsif current_user.standard? %>
+      <div class="container-fluid">
+        <div class="container col-xs-12 col-sm-12">
+          <%= render "standard_content" %>
+        </div>
+      </div>
+    <% end %>  </div>
+</div>
+<div class="clearfix visible-xs-block visible-sm-block">
+  <div class="container col-xs-12 col-sm-12">
+    <% if current_user.admin? %>
+      <div class="container-fluid">
+        <div class="container col-xs-12 col-sm-12">
+          <%= render "admin_content" %>
+        </div>
+      </div>
+    <% elsif current_user.standard? %>
+      <div class="container-fluid">
+        <div class="container col-xs-12 col-sm-12">
+          <%= render "standard_content" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>

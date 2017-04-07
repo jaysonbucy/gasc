@@ -33,6 +33,13 @@ RailsAdmin.config do |config|
       field :image
     end
   end
+  config.model 'SwimForm' do
+    list do
+      field :description
+      field :url
+      field :active
+    end
+  end
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
