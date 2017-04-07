@@ -6,7 +6,11 @@
     <%= link_to "forms", swim_forms_path, class: "btn btn-primary forms" %>
   <% end %>
 
-  <%= link_to "terminology", class: "btn btn-primary terminology" %>
+  <% if current_page?(users_terminology_path)%>
+    <%= link_to "home", root_path, class: "btn btn-primary forms" %>
+  <% else %>
+    <%= link_to "terminology",users_terminology_path, class: "btn btn-primary terminology" %>
+  <% end %>
   <%= link_to "forum", class: "btn btn-primary forum" %>
   <%= link_to "payment", class: "btn btn-primary payment" %>
 </div>
