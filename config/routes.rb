@@ -12,4 +12,5 @@ Rails.application.routes.draw do
 
   get 'welcome/about'
   get 'welcome/coaches'
+  get 'users/terminology'
 end

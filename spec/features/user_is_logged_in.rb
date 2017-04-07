@@ -25,4 +25,10 @@ RSpec.feature "When a user logs in" do
     expect(page).to have_link("home")
     expect(page).to have_content("GASC Forms")
   end
+
+  scenario "with a link to the terminology page" do
+    click_link "terminology"
+    expect(page).to have_link("home")
+    expect(page).not_to have_link("terminology")
+  end
 end
