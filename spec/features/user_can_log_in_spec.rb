@@ -9,10 +9,10 @@ RSpec.feature "user logs in" do
     expect(page).to have_link(href: user_google_oauth2_omniauth_authorize_path)
     click_link href: user_google_oauth2_omniauth_authorize_path
     expect(page).to have_link("Sign Out")
-    expect(page).to have_button("forms")
-    expect(page).to have_button("forum")
-    expect(page).to have_button("terminology")
-    expect(page).to have_button("payment")
+    expect(page).to have_link("forms")
+    expect(page).to have_link("forum")
+    expect(page).to have_link("terminology")
+    expect(page).to have_link("payment")
   end
 
   scenario "using bad google oauth2 info" do
