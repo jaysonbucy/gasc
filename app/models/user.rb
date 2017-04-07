@@ -13,6 +13,8 @@ class User < ApplicationRecord
 
   enum role: [:standard, :admin]
 
+  has_many :swim_forms
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.first_name = auth.info.first_name

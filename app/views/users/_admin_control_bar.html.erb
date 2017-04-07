@@ -1,19 +1,9 @@
 <div class="header-control-bar">
   <% if current_page?(root_url) %>
-    <button type="button" class="btn btn-primary calendar">
-      <%= link_to "calendar" %>
-    </button>
-    <button type="button" class="btn btn-primary forum">
-      <%= link_to "forum" %>
-    </button>
-    <button type="button" class="btn btn-primary email">
-      <%= link_to "email" %>
-    </button>
-    <button type="button" class="btn btn-primary users">
-      <%= link_to "users", rails_admin.index_path('User') %>
-    </button>
-    <button type="button" class="btn btn-primary forms">
-      <%= link_to "forms", rails_admin.index_path('Form') %>
-    </button>
+    <%= link_to "calendar", class: "btn btn-primary calendar" %>
+    <%= link_to "forum", class: "btn btn-primary forum" %>
+    <%= link_to "email", class: "btn btn-primary email" %>
+    <%= link_to "users", rails_admin.index_path('User'), class: "btn btn-primary users" %>
+    <%= link_to "forms", rails_admin.index_path('SwimForm'), class: "btn btn-primary forms" %>
   <% end %>
 </div>

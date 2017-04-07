@@ -1,5 +1,6 @@
-class Form < ApplicationRecord
+class SwimForm < ApplicationRecord
   validates :description, presence: true
   validates :url, presence: true
-  validates :created_by, presence: true
+
+  belongs_to :user
 end

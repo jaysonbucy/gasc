@@ -9,12 +9,14 @@ require 'faker'
   )
 end
 
+users = User.all
+
 3.times do
-  Form.create!(
+  SwimForm.create!(
     description: Faker::Superhero.name,
     url: Faker::Internet.url,
     active: true,
-    created_by: Faker::Name.name
+    user: users.sample
   )
 end
 
@@ -38,4 +40,4 @@ admin = User.create!(
 
 puts "Seed finshed"
 puts "#{User.count} users created"
-puts "#{Form.count} forms created"
+puts "#{SwimForm.count} swim forms created"

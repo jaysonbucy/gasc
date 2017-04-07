@@ -1,8 +1,8 @@
 FactoryGirl.define do
-  factory :form do
+  factory :swim_form do
     description Faker::Hipster.words(2)
     url Faker::Internet.url
     active true
-    created_by Faker::Name.name
+    user 
   end
 end

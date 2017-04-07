@@ -1,19 +1,12 @@
 
 <div class="header-control-bar">
-  <button type="button" class="btn btn-primary forms">
-    <% if current_page?(forms_path) %>
-      <%= link_to "back", root_path %>
-    <% else %>
-      <%= link_to "forms", forms_path %>
-    <% end %>
-  </button>
-  <button type="button" class="btn btn-primary forum">
-    <%= link_to "forum" %>
-  </button>
-  <button type="button" class="btn btn-primary terminology">
-    <%= link_to "terminology" %>
-  </button>
-  <button type="button" class="btn btn-primary payment">
-    <%= link_to "payment" %>
-  </button>
+  <% if current_page?(swim_forms_path) %>
+    <%= link_to "home", root_path, class: "btn btn-primary forms" %>
+  <% else %>
+    <%= link_to "forms", swim_forms_path, class: "btn btn-primary forms" %>
+  <% end %>
+
+  <%= link_to "terminology", class: "btn btn-primary terminology" %>
+  <%= link_to "forum", class: "btn btn-primary forum" %>
+  <%= link_to "payment", class: "btn btn-primary payment" %>
 </div>
