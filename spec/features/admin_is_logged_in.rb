@@ -12,7 +12,6 @@ RSpec.feature "When and admin logs in" do
   end
 
   scenario "they should see a control bar" do
-    expect(page).to have_link("forum")
     expect(page).to have_link("email")
     expect(page).to have_link("user")
     expect(page).to have_link("forms")

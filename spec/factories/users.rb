@@ -7,5 +7,6 @@ FactoryGirl.define do
     password_confirmation "password"
     provider "Google"
     uid SecureRandom.uuid
+    role "standard"
   end
 end

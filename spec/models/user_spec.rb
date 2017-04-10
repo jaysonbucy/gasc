@@ -9,7 +9,7 @@ RSpec.describe User, type: :model do
   it { is_expected.to validate_presence_of(:email) }
   it { is_expected.to validate_uniqueness_of(:email) }
   it { is_expected.to validate_length_of(:email).is_at_least(3) }
-  it { is_expected.to allow_value("user@blocipedia.com").for(:email) }
+  it { is_expected.to allow_value("user@gasc.com").for(:email) }
 
   it { is_expected.to validate_presence_of(:password) }
 
@@ -22,6 +22,9 @@ RSpec.describe User, type: :model do
     end
     it "should have email attribute" do
       expect(subject).to have_attributes(email: subject.email)
+    end
+    it "should have role attribute" do
+      expect(subject).to have_attributes(role: subject.role)
     end
   end
 

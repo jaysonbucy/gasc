@@ -10,7 +10,6 @@ RSpec.feature "user logs in" do
     click_link href: user_google_oauth2_omniauth_authorize_path
     expect(page).to have_link("Sign Out")
     expect(page).to have_link("forms")
-    expect(page).to have_link("forum")
     expect(page).to have_link("terminology")
     expect(page).to have_link("payment")
   end
