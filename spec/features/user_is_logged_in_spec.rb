@@ -11,11 +11,6 @@ RSpec.feature "When a user logs in" do
     click_button "Log in"
   end
 
-  scenario "they should see a user area" do
-      expect(page).to have_link("Sign Out")
-      expect(page).to have_css(".profile-image-local")
-  end
-
   scenario "they should see a control bar" do
     expect(page).to have_link("forms")
     expect(page).to have_link("terminology")
