@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.feature "When and admin logs in" do
   before(:each) do
     visit new_user_session_path
-    stub_admin
+    admin = stub_admin
     expect(page).to have_link("Sign In")
     click_link "Sign In"
-    fill_in 'Email', with: 'tester.account@testing.test'
-    fill_in 'Password', with: 'password01'
+    fill_in 'Email', with: admin.email
+    fill_in 'Password', with: admin.password
     click_button "Log in"
   end
 
