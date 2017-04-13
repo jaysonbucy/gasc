@@ -29,8 +29,7 @@ module MockedSpecHelper
       last_name: "Account",
       email: "tester.account@testing.test",
       password: "password01",
-      role: 'admin',
-      image: 'https://blog.xenproject.org/wp-content/uploads/2014/10/Testing.jpg'
+      role: 'admin'
     )
   end
 end
