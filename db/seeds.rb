@@ -20,6 +20,18 @@ users = User.all
   )
 end
 
+strokes = ['freestyle', 'backstroke', 'breaststroke', 'butterfly']
+sex = ['male', 'female']
+10.times do
+  SwimEvents.create!(
+    name: strokes.sample,
+    distance_in_meters: Faker::Number.number(2),
+    age_group_start: 13,
+    age_group_end: 18,
+    gender: sex.sample
+  )
+end
+
 standard = User.create!(
   first_name: "Standard",
   last_name: "Userman",
@@ -41,3 +53,4 @@ admin = User.create!(
 puts "Seed finshed"
 puts "#{User.count} users created"
 puts "#{SwimForm.count} swim forms created"
+puts "#{SwimEvents.count} events created"
