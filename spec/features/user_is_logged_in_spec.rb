@@ -14,7 +14,6 @@ RSpec.feature "When a user logs in" do
   scenario "they should see a control bar" do
     expect(page).to have_link("forms")
     expect(page).to have_link("terminology")
-    expect(page).to have_link("payment")
     expect(page).not_to have_link("email")
     expect(page).not_to have_link("calendar")
   end

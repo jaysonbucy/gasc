@@ -4,7 +4,7 @@ class CreateSwimmerDetails < ActiveRecord::Migration[5.0]
       t.string :name, null: false
       t.date :date_of_birth, null: false
       t.integer :gender, null: false
-      t.references :users, foreign_key: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

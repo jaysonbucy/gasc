@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20170414013538) do
   create_table "event_heats", force: :cascade do |t|
     t.integer  "swim_meet_id",  null: false
     t.integer  "swim_event_id", null: false
+    t.integer  "heat_number"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["swim_event_id"], name: "index_event_heats_on_swim_event_id"
@@ -49,23 +50,23 @@ ActiveRecord::Schema.define(version: 20170414013538) do
   end
 
   create_table "swim_times", force: :cascade do |t|
-    t.integer  "event_heats_id",     null: false
-    t.integer  "swimmer_details_id", null: false
-    t.decimal  "time_in_seconds",    null: false
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.index ["event_heats_id"], name: "index_swim_times_on_event_heats_id"
-    t.index ["swimmer_details_id"], name: "index_swim_times_on_swimmer_details_id"
+    t.integer  "event_heat_id",     null: false
+    t.integer  "swimmer_detail_id", null: false
+    t.decimal  "time_in_seconds",   null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["event_heat_id"], name: "index_swim_times_on_event_heat_id"
+    t.index ["swimmer_detail_id"], name: "index_swim_times_on_swimmer_detail_id"
   end
 
   create_table "swimmer_details", force: :cascade do |t|
     t.string   "name",          null: false
     t.date     "date_of_birth", null: false
     t.integer  "gender",        null: false
-    t.integer  "users_id"
+    t.integer  "user_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.index ["users_id"], name: "index_swimmer_details_on_users_id"
+    t.index ["user_id"], name: "index_swimmer_details_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

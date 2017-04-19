@@ -11,7 +11,6 @@ RSpec.feature "user logs in" do
     expect(page).to have_link("Sign Out")
     expect(page).to have_link("forms")
     expect(page).to have_link("terminology")
-    expect(page).to have_link("payment")
   end
 
   scenario "using bad google oauth2 info" do
