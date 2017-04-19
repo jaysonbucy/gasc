@@ -21,14 +21,53 @@ users = User.all
 end
 
 strokes = ['freestyle', 'backstroke', 'breaststroke', 'butterfly']
-sex = ['male', 'female']
+genders = ['male', 'female']
+
 10.times do
-  SwimEvents.create!(
+  SwimEvent.create!(
     name: strokes.sample,
     distance_in_meters: Faker::Number.number(2),
     age_group_start: 13,
     age_group_end: 18,
-    gender: sex.sample
+    gender: genders.sample
+  )
+end
+
+3.times do
+  SwimMeet.create(
+    name: Faker::Friends.location,
+    date: Faker::Date.between(Date.today, 1.year.from_now)
+  )
+end
+
+events = SwimEvent.all
+meets = SwimMeet.all
+
+20.times do
+  EventHeat.create(
+    swim_meet: meets.sample,
+    swim_event: events.sample,
+    heat_number: Faker::Number.between(1, 8)
+  )
+end
+
+30.times do
+  SwimmerDetail.create(
+    name: Faker::Name.name,
+    user: users.sample,
+    date_of_birth: Faker::Date.birthday(13,18),
+    gender: genders.sample
+  )
+end
+
+swimmers = SwimmerDetail.all
+heats = EventHeat.all
+
+30.times do
+  SwimTime.create(
+    event_heat: heats.sample,
+    swimmer_detail: swimmers.sample,
+    time_in_seconds: Faker::Number.decimal(2, 2)
   )
 end
 
@@ -53,4 +92,8 @@ admin = User.create!(
 puts "Seed finshed"
 puts "#{User.count} users created"
 puts "#{SwimForm.count} swim forms created"
-puts "#{SwimEvents.count} events created"
+puts "#{SwimMeet.count} meets created"
+puts "#{SwimEvent.count} events created"
+puts "#{EventHeat.count} heats created"
+puts "#{SwimmerDetail.count} swimmers created"
+puts "#{SwimTime.count} times created"
