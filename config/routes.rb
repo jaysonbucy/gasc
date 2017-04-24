@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :swim_forms, only: [:index]
+  resources :swimmer_details, only: [:index, :show]
 
   get 'welcome/about'
   get 'welcome/coaches'
   get 'users/terminology'
+
 end

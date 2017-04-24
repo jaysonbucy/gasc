@@ -40,6 +40,18 @@ RailsAdmin.config do |config|
       field :active
     end
   end
+  config.model 'SwimmerDetail' do
+    list do
+      field :name
+      field :user do
+        pretty_value do
+          value.try(:email)
+        end
+      end
+      field :date_of_birth
+      field :gender
+    end
+  end
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory

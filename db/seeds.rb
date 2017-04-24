@@ -22,21 +22,23 @@ end
 
 strokes = ['freestyle', 'backstroke', 'breaststroke', 'butterfly']
 genders = ['male', 'female']
+distances = [25, 50, 100, 200]
 
 10.times do
   SwimEvent.create!(
     name: strokes.sample,
-    distance_in_meters: Faker::Number.number(2),
+    distance_in_yards: distances.sample,
     age_group_start: 13,
     age_group_end: 18,
     gender: genders.sample
   )
 end
 
+from = Date.new(2017, 8, 1)
 3.times do
   SwimMeet.create(
     name: Faker::Friends.location,
-    date: Faker::Date.between(Date.today, 1.year.from_now)
+    date: Faker::Date.between(from, from + 4.months)
   )
 end
 

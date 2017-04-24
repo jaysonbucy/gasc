@@ -23,13 +23,13 @@ ActiveRecord::Schema.define(version: 20170414013538) do
   end
 
   create_table "swim_events", force: :cascade do |t|
-    t.string   "name",               null: false
-    t.integer  "distance_in_meters", null: false
-    t.integer  "age_group_start",    null: false
-    t.integer  "age_group_end",      null: false
-    t.integer  "gender",             null: false
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.string   "name",              null: false
+    t.integer  "distance_in_yards", null: false
+    t.integer  "age_group_start",   null: false
+    t.integer  "age_group_end",     null: false
+    t.integer  "gender",            null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "swim_forms", force: :cascade do |t|

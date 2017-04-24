@@ -1,0 +1,30 @@
+<div class="view-container">
+  <ol class="swimmer-details">Best Freestyle Times
+    <% [25, 50, 100, 200, 400, 800].each do |yard| %>
+      <li value="<%= yard %>">
+        <%= @presenter.best_swim_times("freestyle")[yard]  %>
+      </li>
+    <% end %>
+  </ol>
+  <ol class="swimmer-details">Best Backstroke Times
+    <% [25, 50, 100, 200].each do |yard| %>
+      <li value="<%= yard %>">
+        <%= @presenter.best_swim_times("backstroke")[yard]  %>
+      </li>
+    <% end %>
+  </ol>
+  <ol class="swimmer-details">Best Breaststroke Times
+    <% [25, 50, 100, 200].each do |yard| %>
+      <li value="<%= yard %>">
+        <%= @presenter.best_swim_times("breaststroke")[yard]  %>
+      </li>
+    <% end %>
+  </ol>
+  <ol class="swimmer-details">Best Butterfly Times
+    <% [25, 50, 100, 200].each do |yard| %>
+      <li value="<%= yard %>">
+        <%= @presenter.best_swim_times("butterfly")[yard]  %>
+      </li>
+    <% end %>
+  </ol>
+</div>
