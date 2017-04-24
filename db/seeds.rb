@@ -65,7 +65,7 @@ end
 swimmers = SwimmerDetail.all
 heats = EventHeat.all
 
-30.times do
+100.times do
   SwimTime.create(
     event_heat: heats.sample,
     swimmer_detail: swimmers.sample,

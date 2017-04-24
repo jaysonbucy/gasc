@@ -29,5 +29,6 @@ class SwimmerDetailPresenter
       .joins(:swimmer_detail)
       .where(swim_meets: { date: [from..to] })
       .where(swimmer_details: { id: swimmer.id })
+      .order("swim_meets.date asc")
   end
 end
