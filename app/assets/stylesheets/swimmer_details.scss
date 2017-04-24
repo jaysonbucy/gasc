@@ -1,0 +1,20 @@
+$light-blue: #E5F5FF;
+$medium-blue: #2CA8DD;
+$dark-blue: #000566;
+$white: #FFFFFF;
+$dark-green: #8c8b8b;
+$light-green: #39B348;
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+  color: $dark-blue;
+  background-color: $light-green;
+}
+
+.meet-table{
+  color: $dark-blue;
+  background-color: $light-green;
+}
+tr:nth-child(odd){
+  color: inherit;
+  background-color: $medium-blue
+}

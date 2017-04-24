@@ -6,10 +6,15 @@
     <%= link_to "forms", swim_forms_path, class: "btn btn-primary forms" %>
   <% end %>
 
-  <% if current_page?(users_terminology_path)%>
+  <% if current_page?(users_terminology_path) %>
     <%= link_to "home", root_path, class: "btn btn-primary forms" %>
   <% else %>
     <%= link_to "terminology",users_terminology_path, class: "btn btn-primary terminology" %>
   <% end %>
-  <%= link_to "payment", class: "btn btn-primary payment" %>
+
+  <% if current_page?(swimmer_details_path) %>
+    <%= link_to "home", root_path, class: "btn btn-primary forms" %>
+  <% else %>
+    <%= link_to "swimmer", swimmer_details_path, class: "btn btn-primary swimmer" %>
+  <% end %>
 </div>

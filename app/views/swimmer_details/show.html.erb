@@ -1,0 +1,24 @@
+<div class="view-container">
+  <h4><%= @swimmer.name %></h4>
+  <div>
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="swimmer-tab active">
+        <a href="#best_times_tab" aria-controls="best_times_tab" data-toggle="tab">Best Times</a>
+      </li>
+      <li role="presentation" class="swimmer-tab">
+        <a href="#meet_times_tab" aria-controls="meet_times_tab" data-toggle="tab">Meet Times</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div id="best_times_tab" class="tab-pane active">
+        <%= render partial: "best_times" %>
+      </div>
+      <div id="meet_times_tab" class="tab-pane">
+        <%= render partial: "meet_times" %>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <%= link_to "back", :swimmer_details, class: "btn btn-primary" %>
+</div>

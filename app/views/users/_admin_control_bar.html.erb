@@ -1,7 +1,7 @@
 <div class="header-control-bar">
   <% if current_page?(root_url) %>
-    <%= link_to "email", class: "btn btn-primary email" %>
     <%= link_to "users", rails_admin.index_path('User'), class: "btn btn-primary users" %>
     <%= link_to "forms", rails_admin.index_path('SwimForm'), class: "btn btn-primary forms" %>
+    <%= link_to "swimmers", rails_admin.index_path('SwimmerDetail'), class: "btn btn-primary forms" %>
   <% end %>
 </div>
